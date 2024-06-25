@@ -30,8 +30,4 @@ crucial for accurate data interpretation.
 
 ## Installation
 
-You can install PyExafs using pip:
 
-```bash
-pip install pyexafs
-```

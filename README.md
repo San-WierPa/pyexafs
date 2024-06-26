@@ -1,5 +1,6 @@
 # PyEXAFS
 
+[![Test Status](https://github.com/San-WierPa/pyexafs/workflows/Python%20package/badge.svg?branch=main)](https://github.com/San-WierPa/pyexafs/actions?query=workflow%3A"Python+package")
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![imports: isort](https://img.shields.io/badge/imports-isort-ef8336.svg)](https://github.com/PyCQA/isort)
 

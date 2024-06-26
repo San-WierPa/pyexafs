@@ -1,5 +1,8 @@
 # PyEXAFS
 
+[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![imports: isort](https://img.shields.io/badge/imports-isort-ef8336.svg)](https://github.com/PyCQA/isort)
+
 Developed by Frank Foerste and Sebastian Paripsa, **PyExafs** aims to streamline the workflow<br>
 for XAS researchers, from data acquisition to final analysis.
 

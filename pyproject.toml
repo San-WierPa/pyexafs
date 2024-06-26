@@ -28,3 +28,6 @@ dev = ["black", "isort"]
 
 [project.urls]
 Homepage = "https://github.com/San-WierPa/pyexafs"
+
+[project.scripts]
+pyexafs = "pyexafs.__main__:main"

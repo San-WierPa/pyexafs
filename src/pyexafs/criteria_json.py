@@ -93,6 +93,6 @@ criteria = {
     },
 }
 
-criteria_path = os.path.abspath(os.path.curdir) + "/criteria.json"
+criteria_path = "src/pyexafs/criteria.json"
 with open(criteria_path, "w") as tofile:
     json.dump(criteria, fp=tofile, indent=4, ensure_ascii=False)

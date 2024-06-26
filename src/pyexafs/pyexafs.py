@@ -16,6 +16,7 @@ __status__ = "production"
 ### import packages ###
 ##############################################################################
 
+import argparse
 import base64
 import io
 import json
@@ -787,10 +788,10 @@ class PyExafsControl(object):
 
         """
         ### read out quality criteria
-        cq_json = os.path.abspath(os.curdir) + "/criteria.json"
+        cq_json = "src/pyexafs/criteria.json"
         ### check out all files
         if self.files is None:
-            folder = "/home/frank/Doktorarbeit/DAPHNE/xafsdb/quality_control/example_data/SYNCHROTRON/"
+            folder = "/src/pyexafs/example_data/SYNCHROTRON/"
             files = sorted(glob(folder + "*"))[1:2]
         else:
             files = self.files
@@ -912,9 +913,21 @@ def main():
     """
     Main function to execute the quality control and plotting.
     """
+    parser = argparse.ArgumentParser(
+        description="Run EXAFS data quality control and plotting."
+    )
+    parser.add_argument("file", type=str, help="Path to the data file")
+
+    args = parser.parse_args()
+    file_path = args.file
+
+    if not os.path.isfile(file_path):
+        print(f"Error: The file '{file_path}' does not exist.")
+        return
+
     test = PyExafsControl(
         facility_type="SYNCHROTRON",
-        files=["/home/sepa/Downloads/someData/binned_data.txt"],
+        files=[file_path],
         take_first=False,
     )
     test.cq.plot_data("RAW", show=True)

@@ -4,3 +4,5 @@ xraylarch==0.9.66
 scipy>=1.10.0
 lmfit>=1.1.0
 pytest
+black
+isort

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyexafs"
-version = "1.0.0"
+version = "1.0.0b1"
 description = "A simple package for fast analysis of EXAFS data"
 readme = "README.md"
 authors = [{ name = "Frank Förste + Sebastian Paripsa", email = "ffoerste@physik.tu-berlin.de + paripsa@uni-wuppertal.de" }]
@@ -13,6 +13,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
 ]
 keywords = ["research-and-development", "exafs", "data-science"]
 dependencies = [
@@ -21,6 +22,9 @@ dependencies = [
     "xraylarch == 0.9.66",
     "scipy",
 ]
+
+[project.optional-dependencies]
+dev = ["black", "isort"]
 
 [project.urls]
 Homepage = "https://github.com/San-WierPa/pyexafs"

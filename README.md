@@ -34,4 +34,22 @@ crucial for accurate data interpretation.
 
 ## Installation
 
+Easy:
 
+```sh
+python -m pip install pyexafs
+```
+
+## Usage
+
+To use the `pyexafs` package, run the following command and provide the path to your data file:
+
+```sh
+python -m pyexafs <path_to_data_file>
+```
+
+For example:
+
+```sh
+python -m pyexafs /path/to/your/datafile.txt
+```

@@ -1,7 +1,7 @@
 # PyEXAFS
 
 Developed by Frank Foerste and Sebastian Paripsa, **PyExafs** aims to streamline the workflow<br>
-for XAFS researchers, from data acquisition to final analysis.
+for XAS researchers, from data acquisition to final analysis.
 
 ## Introduction
 

@@ -7,7 +7,7 @@ name = "pyexafs"
 version = "1.0.0b1"
 description = "A simple package for fast analysis of EXAFS data"
 readme = "README.md"
-authors = [{ name = "Frank Förste + Sebastian Paripsa", email = "ffoerste@physik.tu-berlin.de + paripsa@uni-wuppertal.de" }]
+authors = [{ name = "Sebastian Paripsa", email = "paripsa@uni-wuppertal.de" }]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",

@@ -1,0 +1,6 @@
+include *.txt
+include unittest.cfg
+recursive-include src *.gitkeep
+recursive-include src *.json
+recursive-include src *.txt
+recursive-include tests *.py

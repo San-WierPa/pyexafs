@@ -1,19 +1,25 @@
-import unittest
-import numpy as np
 import os
-from pyexafs.pyexafs import PyExafs
+import unittest
+
+import numpy as np
 from larch import Group
+
+from pyexafs.pyexafs import PyExafs
 
 # Define the path to criteria.json globally
 current_dir = os.path.dirname(os.path.abspath(__file__))
-quality_criteria_json = os.path.join(current_dir, '..', 'src', 'pyexafs', 'criteria.json')
+quality_criteria_json = os.path.join(
+    current_dir, "..", "src", "pyexafs", "criteria.json"
+)
+
 
 class TestPyExafs(unittest.TestCase):
 
     def setUp(self):
         # Sample data for testing
-        self.measurement_data = np.array([[7100, 7101, 7102, 7103, 7104],
-                                          [0.1, 0.2, 0.3, 0.4, 0.5]])
+        self.measurement_data = np.array(
+            [[7100, 7101, 7102, 7103, 7104], [0.1, 0.2, 0.3, 0.4, 0.5]]
+        )
         self.pyexafs = PyExafs(quality_criteria_json, verbose=False)
 
     def test_shorten_data(self):
@@ -41,7 +47,9 @@ class TestPyExafs(unittest.TestCase):
 
     def test_load_data(self):
         self.pyexafs.load_data(self.measurement_data)
-        self.assertEqual(self.pyexafs.data.energy.tolist(), [7100, 7101, 7102, 7103, 7104])
+        self.assertEqual(
+            self.pyexafs.data.energy.tolist(), [7100, 7101, 7102, 7103, 7104]
+        )
         self.assertEqual(self.pyexafs.data.mu.tolist(), [0.1, 0.2, 0.3, 0.4, 0.5])
 
     def test_find_e0(self):
@@ -54,9 +62,7 @@ class TestPyExafs(unittest.TestCase):
     def test_check_edge_step(self):
         self.pyexafs.data = Group()
         self.pyexafs.data.edge_step = 0.5
-        self.pyexafs.quality_criteria_sample = {
-            "edge step": {"min": 0.4, "max": 0.6}
-        }
+        self.pyexafs.quality_criteria_sample = {"edge step": {"min": 0.4, "max": 0.6}}
         result = self.pyexafs.check_edge_step()
         self.assertTrue(result[0])
         self.assertEqual(result[1], 0.5)
@@ -71,5 +77,6 @@ class TestPyExafs(unittest.TestCase):
         self.assertTrue(result[0])
         self.assertEqual(result[1], 1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
